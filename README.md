@@ -1,2 +1,60 @@
 # design-patterns
-Happy Learning !!
+- **Explain Design Patterns ?**
+  - **Creational Patterns**
+    - **Factory**
+      - FactoryMethod pattern is responsible of creating products that belong to one family 
+      - Implementation of [Factory Pattern](/creational-patterns/src/main/java/com/pankiba/designpatterns/creational/factory/)
+      - Creates objects without exposing the instantiation details to the client, and it refers to the newly created object through a common interface.
+      - The client needs a product, but instead of creating it directly using the new operator, it asks the factory object for a new product, providing the information about the type of object it needs. These are also known as parameterized Factories
+      - The factory instantiates a new concrete product and then returns to the client the newly created product (casted to abstract/interface of product class)
+      - The client uses the products as abstract products without being aware about their concrete implementation
+      - In implementation, we are using -
+        - Vechile as Product
+        - Car & Motorcycle as concrete product
+        - VehicleFactory as factory
+      - **When should we use it :** If you have many objects of the same base type and you manipulate them mostly casted to abstract types, then you need a factory
+    - **Factory Method**
+      - Implementation of [Factory Method Pattern](/creational-patterns/src/main/java/com/pankiba/designpatterns/creational/factorymethod/)
+      - Define an interface or abstract class for creating an object but let the subclasses decide which class to instantiate
+      - Refers to the newly created object through a common interface
+    - **Abstract Factory**
+      - Abstract Factory pattern deals with multiple families of products 
+      - Abstract Factory pattern adds another layer of abstraction for Factory pattern. If we compare Abstract Factory with Factory, it is pretty obvious that a new layer of abstraction is added. Abstract Factory is a super-factory which creates other factories. We can call it "Factory of factories".
+      - Abstract Factory offers the interface for creating a family of related objects, without explicitly specifying their classes
+    - **Singleton**
+      - Singleton is used to encapsulate the creation of an object in order to maintain control over it. This not
+  only ensures that only one is created, but also allows lazy instantiation; that is, the instantiation of the object
+  can be delayed until it is actually needed. This is especially beneficial if the constructor needs to perform a
+  costly operation, such as accessing a remote database.
+      - While implementing singleton pattern we need to consider following 4 steps
+        - Default private constructor
+        - Method for getting the reference to the Singleton Object
+        - Make the Access method Synchronized to prevent Thread Problems
+        - Override the Object clone method to prevent cloning
+        - Singleton is serialized and then de-serialized more than once, there will be multiple objects and not a singleton. For this implement readResolve method in order to avoid having 2 different objects
+    - **Prototype**
+      - Is a template of any object before the actual object is constructed.
+      - **When should we use id :** Prototype design pattern is used when the Object creation is a costly affair and requires a lot of time and resources and you have a similar object already existing
+    - **Builder**
+      - Builder pattern is a design pattern that allows for the step-by-step creation of complex objects using the correct sequence of actions. The construction is controlled by a director object that only needs to know the type of object it is to create.
+  - **Structural Patterns**
+    - Structural object-patterns define ways to compose objects to obtain new functionality
+    - **Adapter**
+    - **Bridge**
+    - **Composite**
+    - **Decorator**
+    - **Facade**
+    - **Flyweight**
+    - **Proxy**
+  - **Behavioral Pattern**
+    - **Chain of Responsibility**
+    - **Command**
+    - **Iterator**
+    - **Mediator**
+    - **Memento**
+    - **Observer**
+    - **Strategy**
+      - Strategy is a behavioral design pattern that lets you define a family of algorithms, put each of them into a separate class, and make their objects interchangeable
+    - **Template Methood**
+      - Define the skeleton of an algorithm in an operation, deferring some steps to subclasses.
+      - Template Method lets subclasses redefine certain steps of an algorithm without letting them to change the algorithm's structure. 

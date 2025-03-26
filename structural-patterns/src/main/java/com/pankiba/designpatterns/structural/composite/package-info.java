@@ -1,0 +1,1 @@
+package com.pankiba.designpatterns.structural.composite;

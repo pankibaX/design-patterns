@@ -1,0 +1,10 @@
+package com.pankiba.designpatterns.creational.factorymethod;
+
+public class MotorCycleFactory extends VehicleFactory {
+
+	@Override
+	public Vehicle createVehicle() {
+		return new MotorCycle();
+	}
+
+}
